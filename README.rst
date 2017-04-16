@@ -13,6 +13,8 @@ Installation:
 
 .. code-block:: bash
 
+    # Make sure we have an up-to-date version of pip and setuptools:
+    $ pip install --upgrade pip setuptools
     $ pip install --upgrade JSTPyGame
 
 
@@ -21,7 +23,7 @@ Usage:
 
 .. code-block:: bash
 
-    $ JSTPyGame
+    $ jst-pygame
 
 License:
 ========
