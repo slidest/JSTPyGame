@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 import JSTPyGame
 
 setup(
-    description='My Project',
+    description='My first Python game',
     long_description=open('README.rst').read(),
     author='Julien SIDOT',
     url='https://github.com/slidest/JSTPyGame',
