@@ -19,7 +19,9 @@ Installation:
 Usage:
 ======
 
+.. code-block:: bash
 
+    $ JSTPyGame
 
 License:
 ========

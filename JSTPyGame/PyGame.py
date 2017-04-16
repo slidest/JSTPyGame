@@ -27,6 +27,7 @@ class Engine(object):
             else:
                 current_scene = current_scene.enter(self.scene_map, self.player, self.cheatcode)
 
+
 a_player = Player()
 a_map = Map()
 a_engine = Engine(a_map, a_player)
