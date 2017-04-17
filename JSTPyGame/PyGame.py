@@ -28,7 +28,11 @@ class Engine(object):
                 current_scene = current_scene.enter(self.scene_map, self.player, self.cheatcode)
 
 
-a_player = Player()
-a_map = Map()
-a_engine = Engine(a_map, a_player)
-a_engine.play()
+def start():
+    a_player = Player()
+    a_map = Map()
+    a_engine = Engine(a_map, a_player)
+    a_engine.play()
+
+
+start()

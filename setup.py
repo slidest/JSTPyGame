@@ -50,7 +50,7 @@ setup(
     # La syntaxe est "nom-de-commande-a-creer = package.module:fonction".
     entry_points={
         'console_scripts': [
-           'jst-pygame = JSTPyGame.PyGame',
+           'jst-pygame = JSTPyGame.PyGame:start()',
         ],
     }
     )
