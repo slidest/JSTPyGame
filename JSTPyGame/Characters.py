@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from random import randint
 from termcolor import colored
@@ -61,12 +60,12 @@ class Player(Human):
                 if self.characteristics['armor'] > 0:
                     value = 7
                 else:
-                    value = 9
+                    value = 10
             else:
                 if self.characteristics['armor'] > 0:
-                    value = 5
+                    value = 6
                 else:
-                    value = 7
+                    value = 9
 
             if dodge < value:
                 if attack > opponent_characteristics['armor']:
@@ -84,14 +83,14 @@ class Player(Human):
 
                 if opponent_characteristics['armor'] > 0:
                     if self.characteristics['armor'] > 0:
-                        value = 8
+                        value = 5
                     else:
-                        value = 6
+                        value = 3
                 else:
                     if self.characteristics['armor'] > 0:
-                        value = 9
-                    else:
                         value = 7
+                    else:
+                        value = 5
 
                 if dodge < value:
                     self.characteristics['life'] -= (enemi_attack - self.characteristics['armor'])
