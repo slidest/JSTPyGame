@@ -61,12 +61,12 @@ class Player(Human):
                 if self.characteristics['armor'] > 0:
                     value = 7
                 else:
-                    value = 10
+                    value = 9
             else:
                 if self.characteristics['armor'] > 0:
-                    value = 6
+                    value = 5
                 else:
-                    value = 9
+                    value = 7
 
             if dodge < value:
                 if attack > opponent_characteristics['armor']:
@@ -84,14 +84,14 @@ class Player(Human):
 
                 if opponent_characteristics['armor'] > 0:
                     if self.characteristics['armor'] > 0:
-                        value = 5
+                        value = 8
                     else:
-                        value = 3
+                        value = 6
                 else:
                     if self.characteristics['armor'] > 0:
-                        value = 7
+                        value = 9
                     else:
-                        value = 5
+                        value = 7
 
                 if dodge < value:
                     self.characteristics['life'] -= (enemi_attack - self.characteristics['armor'])
