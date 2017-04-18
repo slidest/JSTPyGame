@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from Texts import texts
 from Characters import *
+from Lexicon import *
 from termcolor import colored
 from random import shuffle
 
@@ -32,11 +33,26 @@ class DungeonGate(object):
         print '_'*40
         print texts.get(type(self).__name__)
         action = raw_input("Réponse> ")
-        if action == "lancer du gravier sur le cheval" or action == "lancer un caillou sur le cheval"\
-                     or action == cheatcode:
+        analysed_action = scan(action)
+        if ((('verb', 'lancer') in analysed_action or
+            ('verb', 'lance') in analysed_action or
+            ('verb', 'lances') in analysed_action or
+            ('verb', 'jeter') in analysed_action or
+            ('verb', 'jetes') in analysed_action or
+            ('verb', 'jete') in analysed_action)
+                and (('noon', 'caillou') in analysed_action or
+                     ('noon', 'gravier') in analysed_action)
+                and (('noon', 'cheval') in analysed_action))\
+                or (action == cheatcode):
             print texts.get("DungeonGate_cheval")
             return Corridor()
-        elif action == "attaquer le garde":
+        elif (('verb', 'attaquer') in analysed_action or
+              ('verb', 'attaque') in analysed_action or
+              ('verb', 'attaques') in analysed_action or
+              ('verb', 'frapper') in analysed_action or
+              ('verb', 'frappes') in analysed_action or
+              ('verb', 'frappe') in analysed_action)\
+                and ('noon', 'garde') in analysed_action:
             a_guard = HeavyGuard()
             fight_result = player_instance.fight(a_guard.name, a_guard.characteristics, cheatcode)
             if fight_result == 'alive':
