@@ -1,32 +1,31 @@
-lexicon = {
-            'verbs': [
-                    'jeter',
-                    'lancer',
-                    'attaquer',
-                    'frapper',
-                    'jete',
-                    'lance',
-                    'attaque',
-                    'frappe',
-                    'jetes',
-                    'lances',
-                    'attaques',
-                    'frappes',
-                    ],
-            'noons': [
-                    'cheval',
-                    'garde',
-                    'gravier',
-                    'caillou'
-                    ],
-            'stops': [
-                    'le',
-                    'la',
-                    'avec',
-                    'sur',
-                    'du'
-                    ]
-          }
+class Francais(object):
+        verbs = [
+                'jeter',
+                'lancer',
+                'attaquer',
+                'frapper',
+                'jete',
+                'lance',
+                'attaque',
+                'frappe',
+                'jetes',
+                'lances',
+                'attaques',
+                'frappes']
+
+        noons = [
+                'cheval',
+                'garde',
+                'gravier',
+                'caillou',
+                'hero']
+
+        stops = [
+                'le',
+                'la',
+                'avec',
+                'sur',
+                'du']
 
 
 def convert_number(string):
@@ -40,11 +39,11 @@ def scan(sentence):
     words = sentence.lower().split()
     analysed_words = []
     for word in words:
-        if word in lexicon['verbs']:
+        if word in Francais.verbs:
             analysed_words.append(('verb', word))
-        elif word in lexicon['noons']:
+        elif word in Francais.noons:
             analysed_words.append(('noon', word))
-        elif word in lexicon['stops']:
+        elif word in Francais.stops:
             analysed_words.append(('stop', word))
         else:
             number = convert_number(word)
