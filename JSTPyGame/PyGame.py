@@ -19,7 +19,7 @@ class Engine(object):
         current_scene = self.scene_map.opening_scene
         # run current_scene.enter() and return teh next_scene to run
         while True:
-            # Defin the number of parameters to give for "enter" method
+            # Define the number of parameters to give for "enter" method
             if isinstance(current_scene, Death) or isinstance(current_scene, Victory) \
                                                 or isinstance(current_scene, EmptyRoom):
                 current_scene = current_scene.enter()

@@ -1,4 +1,4 @@
-class Francais(object):
+class French(object):
         verbs = [
                 'jeter',
                 'lancer',
@@ -13,7 +13,7 @@ class Francais(object):
                 'attaques',
                 'frappes']
 
-        noons = [
+        nouns = [
                 'cheval',
                 'garde',
                 'gravier',
@@ -39,11 +39,11 @@ def scan(sentence):
     words = sentence.lower().split()
     analysed_words = []
     for word in words:
-        if word in Francais.verbs:
+        if word in French.verbs:
             analysed_words.append(('verb', word))
-        elif word in Francais.noons:
-            analysed_words.append(('noon', word))
-        elif word in Francais.stops:
+        elif word in French.nouns:
+            analysed_words.append(('noun', word))
+        elif word in French.stops:
             analysed_words.append(('stop', word))
         else:
             number = convert_number(word)
@@ -52,3 +52,5 @@ def scan(sentence):
             else:
                 analysed_words.append(('number', number))
     return analysed_words
+
+# print scan("Le hero frappe le garde")
