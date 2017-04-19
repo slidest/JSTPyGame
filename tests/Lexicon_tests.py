@@ -3,12 +3,20 @@ from nose.tools import *
 from JSTPyGame import Lexicon
 
 
-def test_noons():
-    assert_equal(Lexicon.scan("cheval"), [('noon', 'cheval')])
+def test_nouns():
+    assert_equal(Lexicon.scan("cheval"), [('noun', 'cheval')])
     result = Lexicon.scan("garde gravier caillou")
-    assert_equal(result, [('noon', 'garde'),
-                          ('noon', 'gravier'),
-                          ('noon', 'caillou')])
+    assert_equal(result, [('noun', 'garde'),
+                          ('noun', 'gravier'),
+                          ('noun', 'caillou')])
+
+
+def test_directions():
+    assert_equal(Lexicon.scan("nord"), [('direction', 'nord')])
+    result = Lexicon.scan("nord sud est")
+    assert_equal(result, [('direction', 'nord'),
+                          ('direction', 'sud'),
+                          ('direction', 'est')])
 
 
 def test_verbs():

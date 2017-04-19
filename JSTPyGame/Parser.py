@@ -4,11 +4,11 @@ class ParserError(Exception):
 
 class Sentence(object):
 
-    def __init__(self, subject, verb, object):
+    def __init__(self, subject, verb, obj):
         # remember we take ('noun', 'hero') tuples and convert them
         self.subject = subject[1]
         self.verb = verb[1]
-        self.object = object[1]
+        self.object = obj[1]
 
 
 def peek(word_list):
@@ -18,6 +18,7 @@ def peek(word_list):
         word = word_list[0]
         return word[0]
     else:
+        print "ou la"
         return None
 
 
@@ -54,6 +55,8 @@ def parse_object(word_list):
 
     if next == 'noun':
             return match(word_list, 'noun')
+    if next == 'direction':
+        return match(word_list, 'direction')
     else:
         raise ParserError("Expected a noun next.")
 

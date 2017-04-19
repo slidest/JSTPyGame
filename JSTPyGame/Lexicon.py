@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class French(object):
         verbs = [
                 'jeter',
@@ -25,7 +26,19 @@ class French(object):
                 'la',
                 'avec',
                 'sur',
-                'du']
+                'du',
+                'à',
+                'en']
+
+        directions = [
+                    'gauche',
+                    'droite',
+                    'haut',
+                    'bas',
+                    'nord',
+                    'sud',
+                    'est',
+                    'ouest']
 
 
 def convert_number(string):
@@ -45,6 +58,8 @@ def scan(sentence):
             analysed_words.append(('noun', word))
         elif word in French.stops:
             analysed_words.append(('stop', word))
+        elif word in French.directions:
+            analysed_words.append(('direction', word))
         else:
             number = convert_number(word)
             if number is None:
@@ -53,4 +68,4 @@ def scan(sentence):
                 analysed_words.append(('number', number))
     return analysed_words
 
-# print scan("Le hero frappe le garde")
+#print scan("Le hero frappe le garde")
