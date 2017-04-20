@@ -48,8 +48,8 @@ def convert_number(string):
         return None
 
 
-def scan(sentence):
-    words = sentence.lower().split()
+def scan(player_input):
+    words = player_input.lower().split()
     analysed_words = []
     for word in words:
         if word in French.verbs:
@@ -67,5 +67,3 @@ def scan(sentence):
             else:
                 analysed_words.append(('number', number))
     return analysed_words
-
-#print scan("Le hero frappe le garde")
